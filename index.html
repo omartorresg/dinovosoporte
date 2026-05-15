@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Dinovo</title>
+    <link rel="icon" type="image/svg+xml" href="logoSymbol.svg">
+    <meta name="description" content="Dinovo - Salud financiera premium"/>
+
+    <style>
+        :root {
+          --bg: #0F0F10;
+          --fg: #FFFFFF;
+          --muted: #CFCFCF;
+          --card: #121212;
+          --green: #8BC34A;
+          --blue: #29B6F6;
+        }
+        html, body {
+          margin:0; padding:0;
+          background: var(--bg);
+          color: var(--fg);
+          font-family: "Inter", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+        }
+        header {
+          text-align: center;
+          padding: 60px 20px 40px;
+          border-bottom: 1px solid var(--card);
+        }
+        header img.logo {
+          max-width: 160px;
+        }
+        .container {
+          max-width: 900px;
+          margin: 0 auto;
+          padding: 40px 20px 80px;
+        }
+        .links {
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+          margin-top: 40px;
+          flex-wrap: wrap;
+        }
+        .btn {
+          display: inline-block;
+          padding: 14px 28px;
+          border-radius: 10px;
+          font-weight: 600;
+          color: var(--fg);
+          background: var(--card);
+          text-decoration: none;
+          transition: all 0.3s ease;
+          border: 1px solid transparent;
+        }
+        .btn:hover {
+          border-color: var(--green);
+          color: var(--green);
+          background: #1a1a1a;
+        }
+        .card {
+          background: var(--card);
+          border-radius: 12px;
+          padding: 24px;
+          margin: 20px 0;
+        }
+        h2 {
+          color: var(--green);
+          font-size: 22px;
+          margin-top: 0;
+        }
+        p {
+          line-height: 1.7;
+          color: var(--fg);
+        }
+        footer {
+          text-align: center;
+          padding: 20px;
+          color: var(--muted);
+          font-size: 14px;
+          border-top: 1px solid var(--card);
+        }
+    </style>
+</head>
+<body>
+<header>
+    <!-- Logo con degradado verde-azul -->
+    <img src="Logo.svg" alt="Dinovo Logo" class="logo">
+</header>
+
+<div class="container">
+    <div class="card">
+        <h2>Bienvenido a Dinovo</h2>
+        <p>Accede a nuestras políticas legales de forma clara y transparente.</p>
+    </div>
+
+    <div class="links">
+        <a href="privacidad.html" class="btn">Política de Privacidad</a>
+        <a href="terminos.html" class="btn">Términos y Condiciones</a>
+    </div>
+</div>
+
+<footer>
+    © <script>document.write(new Date().getFullYear())</script> Dinovo. Todos los derechos reservados.
+</footer>
+</body>
+</html>
