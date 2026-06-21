@@ -5,103 +5,290 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Eliminar cuenta — Dinovo</title>
 <style>
-  :root { --verde:#8BC34A; --fondo:#0A0A0A; }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body {
-    background:var(--fondo); color:#fff;
-    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-    padding:40px 24px; max-width:640px; margin:0 auto;
+  :root{
+    --verde:#8BC34A;
+    --verde-dark:#6FA934;
+    --alerta:#FF7043;
+    --fondo:#0A0A0A;
+    --blanco:#FFFFFF;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--fondo);
+    color:var(--blanco);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+    line-height:1.65;
     -webkit-font-smoothing:antialiased;
   }
-  h1 { font-size:26px; font-weight:800; margin-bottom:8px; }
-  h1 span { color:var(--verde); }
-  .sub { color:rgba(255,255,255,0.55); font-size:14px; margin-bottom:32px; }
-  .card {
-    background:rgba(255,255,255,0.04);
-    border:1px solid rgba(255,255,255,0.1);
-    border-radius:16px; padding:20px; margin-bottom:16px;
+
+  /* ─── TOP BAR ─── */
+  .topbar{
+    position:sticky;top:0;z-index:100;
+    background:rgba(10,10,10,0.75);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
   }
-  .card h2 { font-size:15px; font-weight:700; margin-bottom:10px; color:var(--verde); }
-  .card p, .card li { font-size:14px; color:rgba(255,255,255,0.8); line-height:1.6; }
-  .card ol { padding-left:20px; }
-  .card li { margin-bottom:6px; }
-  .tag {
+  .topbar-inner{
+    max-width:760px;margin:0 auto;
+    display:flex;align-items:center;
+    padding:14px 20px;gap:12px;
+  }
+  .btn-volver{
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:12px;
+    padding:9px 14px;
+    color:var(--blanco);
+    font-size:13px;font-weight:600;
+    text-decoration:none;
+    transition:background .2s;
+  }
+  .btn-volver:hover{background:rgba(255,255,255,0.12);}
+  .btn-volver svg{width:16px;height:16px;}
+  .topbar-label{
+    flex:1;text-align:center;
+    color:rgba(255,255,255,0.62);
+    font-weight:600;font-size:13px;letter-spacing:.5px;
+  }
+  .topbar-spacer{width:92px;}
+
+  /* ─── HERO ─── */
+  .hero{
+    text-align:center;
+    padding:36px 24px 24px;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    max-width:760px;margin:0 auto;
+  }
+  .hero-icon{
+    width:58px;height:58px;margin:0 auto 16px;
+    border-radius:18px;
+    background:linear-gradient(135deg,var(--alerta),#E64A19);
+    box-shadow:0 12px 32px rgba(255,112,67,0.35);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .hero-icon svg{width:30px;height:30px;}
+  .hero h1{
+    font-size:26px;font-weight:800;letter-spacing:-0.6px;
+    margin-bottom:6px;
+  }
+  .hero-sub{
+    color:rgba(255,255,255,0.6);
+    font-size:13px;font-weight:500;
+  }
+
+  /* ─── CONTENIDO ─── */
+  .content{
+    max-width:760px;margin:0 auto;
+    padding:24px 20px 48px;
+  }
+
+  /* ─── WARNING ─── */
+  .warning{
+    background:rgba(255,112,67,0.08);
+    border:1px solid rgba(255,112,67,0.3);
+    border-radius:14px;
+    padding:16px 18px;
+    margin-bottom:20px;
+    display:flex;align-items:flex-start;gap:12px;
+  }
+  .warning svg{
+    flex-shrink:0;width:20px;height:20px;
+    color:var(--alerta);margin-top:1px;
+  }
+  .warning p{
+    color:rgba(255,255,255,0.85);
+    font-size:13.5px;line-height:1.55;
+  }
+
+  /* ─── CARDS ─── */
+  .card{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:16px;
+    padding:20px;
+    margin-bottom:16px;
+  }
+  .tag{
     display:inline-block;
     background:rgba(139,195,74,0.12);
     border:1px solid rgba(139,195,74,0.3);
-    color:var(--verde); font-size:12px; font-weight:700;
-    padding:4px 10px; border-radius:8px; margin-bottom:12px;
+    color:var(--verde);
+    font-size:10.5px;font-weight:800;letter-spacing:.6px;
+    padding:4px 10px;border-radius:8px;margin-bottom:12px;
   }
-  a { color:var(--verde); }
-  .warning {
-    background:rgba(255,112,67,0.08);
-    border:1px solid rgba(255,112,67,0.3);
-    border-radius:12px; padding:14px 16px; margin-bottom:16px;
-    font-size:13px; color:rgba(255,255,255,0.75); line-height:1.5;
+  .card h2{
+    font-size:15.5px;font-weight:700;letter-spacing:-0.1px;
+    color:var(--verde);
+    margin-bottom:12px;
   }
-  footer { margin-top:40px; color:rgba(255,255,255,0.35); font-size:12px; }
+  .card p{
+    color:rgba(255,255,255,0.85);
+    font-size:14px;line-height:1.65;
+    margin-bottom:10px;
+  }
+  .card p:last-child{margin-bottom:0;}
+  .card .nota{
+    color:rgba(255,255,255,0.5);
+    font-size:12px;
+    margin-top:8px;
+  }
+  .card ol{
+    padding-left:20px;
+    counter-reset:item;
+    list-style:none;
+  }
+  .card ol li{
+    padding:6px 0;
+    color:rgba(255,255,255,0.85);
+    font-size:14px;line-height:1.55;
+    position:relative;
+    padding-left:8px;
+  }
+  .card ol li::before{
+    counter-increment:item;
+    content:counter(item);
+    position:absolute;
+    left:-22px;top:6px;
+    width:20px;height:20px;
+    background:rgba(139,195,74,0.12);
+    border:1px solid rgba(139,195,74,0.3);
+    border-radius:6px;
+    color:var(--verde);
+    font-size:10.5px;font-weight:700;
+    display:flex;align-items:center;justify-content:center;
+    line-height:1;
+  }
+  .card ul.bullets{list-style:none;}
+  .card ul.bullets li{
+    display:flex;align-items:flex-start;
+    padding:6px 0;
+    color:rgba(255,255,255,0.85);
+    font-size:14px;line-height:1.55;
+  }
+  .card ul.bullets li::before{
+    content:'';
+    flex-shrink:0;
+    width:5px;height:5px;
+    margin:8px 13px 0 0;
+    border-radius:50%;
+    background:var(--verde);
+  }
+  .email-link{
+    display:inline-block;
+    margin-top:6px;
+    color:var(--verde);
+    font-weight:700;font-size:15.5px;
+    text-decoration:none;
+    border-bottom:1px solid rgba(139,195,74,0.3);
+    transition:border-color .2s;
+  }
+  .email-link:hover{border-color:var(--verde);}
+
+  /* ─── FOOTER ─── */
+  .footer{
+    max-width:760px;margin:0 auto;
+    padding:22px 20px 40px;
+    border-top:1px solid rgba(255,255,255,0.08);
+    text-align:center;
+  }
+  .footer-logo-img{
+    height:31px;
+    margin-bottom:8px;
+    opacity:0.75;
+  }
+  .footer-text{
+    color:rgba(255,255,255,0.4);
+    font-size:11.5px;letter-spacing:.4px;
+  }
+
+  @media (max-width:600px){
+    .hero h1{font-size:22px;}
+    .topbar-spacer{width:0;}
+  }
 </style>
 </head>
 <body>
 
-  <h1>Din<span>o</span>vo</h1>
-  <div class="sub">Solicitud de eliminación de cuenta</div>
-
-  <div class="warning">
-    ⚠️ La eliminación de tu cuenta es permanente e irreversible. 
-    Todos tus datos serán borrados y no podrán recuperarse.
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <a href="index.html" class="btn-volver">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Volver
+      </a>
+      <div class="topbar-label">ELIMINAR CUENTA</div>
+      <div class="topbar-spacer"></div>
+    </div>
   </div>
 
-  <div class="card">
-    <div class="tag">OPCIÓN 1 — Recomendada</div>
-    <h2>Eliminar desde la app (inmediato)</h2>
-    <ol>
-      <li>Abre Dinovo en tu dispositivo</li>
-      <li>Toca el ícono de perfil (esquina superior derecha)</li>
-      <li>Baja hasta la sección <strong>"Zona de peligro"</strong></li>
-      <li>Toca <strong>"Eliminar mi cuenta"</strong></li>
-      <li>Confirma en los dos pasos de verificación</li>
-    </ol>
-    <p style="margin-top:10px; color:rgba(255,255,255,0.5); font-size:12px;">
-      Tu cuenta y todos tus datos se eliminan inmediatamente.
-    </p>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>
+    </div>
+    <h1>Eliminar mi cuenta</h1>
+    <div class="hero-sub">Solicitud de eliminación de cuenta y datos</div>
   </div>
 
-  <div class="card">
-    <div class="tag">OPCIÓN 2 — Por correo</div>
-    <h2>Solicitar eliminación por email</h2>
-    <p>Si no tienes acceso a la app, envíanos un correo a:</p>
-    <p style="margin-top:8px; font-size:16px; font-weight:700;">
-      <a href="mailto:dinovosoporte@gmail.com?subject=Solicitud%20de%20eliminaci%C3%B3n%20de%20cuenta">
+  <!-- CONTENIDO -->
+  <div class="content">
+
+    <!-- WARNING -->
+    <div class="warning">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <p>La eliminación de tu cuenta es <strong>permanente e irreversible</strong>. Todos tus datos serán borrados y no podrán recuperarse.</p>
+    </div>
+
+    <!-- OPCIÓN 1 -->
+    <div class="card">
+      <div class="tag">OPCIÓN 1 — Recomendada</div>
+      <h2>Eliminar desde la app (inmediato)</h2>
+      <ol>
+        <li>Abre Dinovo en tu dispositivo</li>
+        <li>Toca el ícono de perfil en la esquina superior derecha</li>
+        <li>Baja hasta la sección <strong>"Zona de peligro"</strong></li>
+        <li>Toca <strong>"Eliminar mi cuenta"</strong></li>
+        <li>Confirma en los dos pasos de verificación que aparecen</li>
+      </ol>
+      <p class="nota">Tu cuenta y todos tus datos se eliminan inmediatamente al confirmar.</p>
+    </div>
+
+    <!-- OPCIÓN 2 -->
+    <div class="card">
+      <div class="tag">OPCIÓN 2 — Por correo</div>
+      <h2>Solicitar eliminación por email</h2>
+      <p>Si no tienes acceso a la app, envíanos un correo a:</p>
+      <a href="mailto:dinovosoporte@gmail.com?subject=Solicitud%20de%20eliminaci%C3%B3n%20de%20cuenta" class="email-link">
         dinovosoporte@gmail.com
       </a>
-    </p>
-    <p style="margin-top:8px;">Con el asunto: <strong>Solicitud de eliminación de cuenta</strong></p>
-    <p style="margin-top:4px; color:rgba(255,255,255,0.5); font-size:12px;">
-      Procesamos tu solicitud en un plazo máximo de 7 días hábiles.
-    </p>
+      <p style="margin-top:10px;">Con el asunto: <strong>Solicitud de eliminación de cuenta</strong></p>
+      <p class="nota">Procesamos tu solicitud en un plazo máximo de 7 días hábiles.</p>
+    </div>
+
+    <!-- QUÉ SE ELIMINA -->
+    <div class="card">
+      <h2>¿Qué datos se eliminan?</h2>
+      <ul class="bullets">
+        <li>Tu perfil y datos de cuenta (nombre, correo)</li>
+        <li>Todos tus movimientos, ingresos y gastos</li>
+        <li>Tus metas de ahorro y aportes</li>
+        <li>Tus inversiones y registros de inversión</li>
+        <li>Configuraciones y categorías personalizadas</li>
+        <li>Tu historial de racha y gamificación</li>
+        <li>Tu suscripción Premium/Pro (se cancela sin reembolso)</li>
+      </ul>
+      <p class="nota">No conservamos ningún dato personal después de la eliminación, salvo lo estrictamente requerido por la ley aplicable.</p>
+    </div>
   </div>
 
-  <div class="card">
-    <h2>¿Qué datos se eliminan?</h2>
-    <ul style="padding-left:20px;">
-      <li>Tu perfil y datos de cuenta (nombre, correo)</li>
-      <li>Todos tus movimientos, ingresos y gastos</li>
-      <li>Tus metas de ahorro y aportes</li>
-      <li>Tus inversiones y registros de inversión</li>
-      <li>Configuraciones y categorías personalizadas</li>
-      <li>Tu historial de racha y gamificación</li>
-      <li>Tu suscripción Premium/Pro (se cancela sin reembolso)</li>
-    </ul>
-    <p style="margin-top:12px; color:rgba(255,255,255,0.5); font-size:12px;">
-      No conservamos ningún dato personal después de la eliminación, 
-      salvo lo requerido por ley.
-    </p>
+  <!-- FOOTER -->
+  <div class="footer">
+    <img src="Logo.svg" alt="Dinovo" class="footer-logo-img">
+    <div class="footer-text">República Dominicana · dinovosoporte@gmail.com</div>
   </div>
-
-  <footer>
-    Dinovo · República Dominicana · dinovosoporte@gmail.com
-  </footer>
 
 </body>
 </html>
