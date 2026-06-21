@@ -1,154 +1,287 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Política de Privacidad - Dinovo</title>
-    <link rel="icon" type="image/svg+xml" href="logoSymbol.svg">
-    <meta name="description" content="Política de Privacidad de Dinovo."/>
-    <style>
-        :root {
-          --bg: #0F0F10;
-          --fg: #FFFFFF;
-          --muted: #CFCFCF;
-          --green: #8BC34A;
-          --blue: #29B6F6;
-          --card: #121212;
-        }
-        html, body {
-          margin:0; padding:0;
-          background: var(--bg);
-          color: var(--fg);
-          font-family: "Inter", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
-        }
-        header {
-          text-align: center;
-          padding: 24px 16px;
-          border-bottom: 1px solid var(--card);
-        }
-        header img {
-          max-width: 140px;
-          margin-bottom: 12px;
-        }
-        h1 {
-          color: var(--green);
-          margin: 0 0 8px;
-          font-size: 28px;
-        }
-        .subtitle {
-          color: var(--muted);
-          margin-bottom: 24px;
-        }
-        .container {
-          max-width: 960px;
-          margin: 0 auto;
-          padding: 32px 20px 80px;
-        }
-        h2 {
-          color: var(--green);
-          margin-top: 32px;
-          font-size: 20px;
-        }
-        p, ul {
-          line-height: 1.7;
-          color: var(--fg);
-        }
-        a {
-          color: var(--blue);
-          text-decoration: none;
-        }
-        a:hover {
-          text-decoration: underline;
-        }
-        .card {
-          background: var(--card);
-          border-radius: 12px;
-          padding: 20px;
-          margin: 16px 0;
-        }
-        .footer {
-          margin-top: 40px;
-          color: var(--muted);
-          font-size: 14px;
-          text-align: center;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidad — Dinovo</title>
+<style>
+  :root{
+    --verde:#8BC34A;
+    --verde-dark:#6FA934;
+    --fondo:#0A0A0A;
+    --blanco:#FFFFFF;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--fondo);
+    color:var(--blanco);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ─── TOP BAR ─── */
+  .topbar{
+    position:sticky;top:0;z-index:100;
+    background:rgba(10,10,10,0.75);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .topbar-inner{
+    max-width:760px;margin:0 auto;
+    display:flex;align-items:center;
+    padding:14px 20px;gap:12px;
+  }
+  .btn-volver{
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:12px;
+    padding:9px 14px;
+    color:var(--blanco);
+    font-size:13px;font-weight:600;
+    text-decoration:none;
+    transition:background .2s;
+  }
+  .btn-volver:hover{background:rgba(255,255,255,0.12);}
+  .btn-volver svg{width:16px;height:16px;}
+  .topbar-label{
+    flex:1;text-align:center;
+    color:rgba(255,255,255,0.62);
+    font-weight:600;font-size:13px;letter-spacing:.5px;
+  }
+  .topbar-spacer{width:92px;}
+
+  /* ─── HERO ─── */
+  .hero{
+    text-align:center;
+    padding:36px 24px 24px;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    max-width:760px;margin:0 auto;
+  }
+  .hero-icon{
+    width:58px;height:58px;margin:0 auto 16px;
+    border-radius:18px;
+    background:linear-gradient(135deg,var(--verde),var(--verde-dark));
+    box-shadow:0 12px 32px rgba(139,195,74,0.35);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .hero-icon svg{width:28px;height:28px;}
+  .hero h1{
+    font-size:26px;font-weight:800;letter-spacing:-0.6px;
+    margin-bottom:6px;
+  }
+  .hero-date{
+    color:rgba(255,255,255,0.6);
+    font-size:12.5px;font-weight:500;
+  }
+
+  /* ─── CONTENIDO ─── */
+  .content{
+    max-width:760px;margin:0 auto;
+    padding:24px 20px 48px;
+  }
+  .intro{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:16px;
+    padding:18px;
+    color:rgba(255,255,255,0.62);
+    font-size:14px;line-height:1.65;
+  }
+
+  .seccion{padding-top:30px;}
+  .seccion-head{
+    display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;
+  }
+  .seccion-num{
+    flex-shrink:0;
+    width:26px;height:26px;
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(139,195,74,0.12);
+    border:1px solid rgba(139,195,74,0.3);
+    border-radius:8px;
+    color:var(--verde);
+    font-size:11.5px;font-weight:700;
+  }
+  .seccion-titulo{
+    color:var(--verde);
+    font-size:15.5px;font-weight:700;letter-spacing:-0.1px;
+    padding-top:3px;
+  }
+  .seccion p{
+    color:rgba(255,255,255,0.85);
+    font-size:14px;line-height:1.65;
+    margin-bottom:12px;
+  }
+
+  /* ─── BULLETS ─── */
+  ul.bullets{list-style:none;}
+  ul.bullets li{
+    display:flex;align-items:flex-start;
+    padding:7px 0;
+    color:rgba(255,255,255,0.85);
+    font-size:14px;line-height:1.55;
+  }
+  ul.bullets li::before{
+    content:'';
+    flex-shrink:0;
+    width:5px;height:5px;
+    margin:8px 13px 0 0;
+    border-radius:50%;
+    background:var(--verde);
+  }
+  ul.bullets b{color:var(--blanco);font-weight:700;}
+
+  /* ─── FOOTER ─── */
+  .footer{
+    max-width:760px;margin:0 auto;
+    padding:22px 20px 40px;
+    border-top:1px solid rgba(255,255,255,0.08);
+    text-align:center;
+  }
+  .footer-logo{
+    font-size:22px;font-weight:800;
+    color:rgba(255,255,255,0.75);
+    letter-spacing:-0.5px;
+    margin-bottom:8px;
+  }
+  .footer-logo span{color:var(--verde);}
+  .footer-text{
+    color:rgba(255,255,255,0.4);
+    font-size:11.5px;letter-spacing:.4px;
+  }
+
+  @media (max-width:600px){
+    .hero h1{font-size:22px;}
+    .topbar-spacer{width:0;}
+  }
+</style>
 </head>
 <body>
-<header>
-    <img src="Logo.svg" alt="Dinovo Logo">
-    <h1>Política de Privacidad</h1>
-    <div class="subtitle">Última actualización: 21 de septiembre de 2025</div>
-</header>
 
-<div class="container">
-    <div class="card">
-        <p>En Dinovo respetamos tu privacidad. Esta Política describe qué datos recopilamos, cómo los usamos, las bases legales del tratamiento, cómo los compartimos, cuánto tiempo los conservamos y qué derechos tienes.</p>
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <a href="index.html" class="btn-volver">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Volver
+      </a>
+      <div class="topbar-label">PRIVACIDAD</div>
+      <div class="topbar-spacer"></div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    </div>
+    <h1>Política de Privacidad</h1>
+    <div class="hero-date">Última actualización: 17 de mayo de 2026</div>
+  </div>
+
+  <!-- CONTENIDO -->
+  <div class="content">
+    <div class="intro">
+      En Dinovo respetamos tu privacidad. Esta Política describe qué datos recopilamos, cómo los usamos, con quién los compartimos y qué derechos tienes sobre ellos.
     </div>
 
-    <h2>1. Responsable del tratamiento</h2>
-    <p>Dinovo es el responsable del tratamiento de tus datos personales. Para consultas: <a href="mailto:dinovosoporte@gmail.com">dinovosoporte@gmail.com</a> — República Dominicana</p>
+    <div class="seccion">
+      <div class="seccion-head"><div class="seccion-num">1</div><div class="seccion-titulo">Responsable del tratamiento</div></div>
+      <p>Dinovo es el responsable del tratamiento de tus datos personales. Para consultas escríbenos a dinovosoporte@gmail.com — República Dominicana.</p>
+    </div>
 
-    <h2>2. Datos que recopilamos</h2>
-    <ul>
-        <li><strong>Datos de cuenta:</strong> nombre, correo electrónico, foto de perfil (si la provee el proveedor de autenticación), país/idioma.</li>
-        <li><strong>Datos de uso:</strong> eventos de la app, tiempo de sesión, pantallas visitadas, interacciones con funciones.</li>
-        <li><strong>Datos financieros introducidos por ti:</strong> categorías de gasto/ingreso, hábitos, presupuestos, metas y configuraciones. Dinovo no custodia tu dinero ni ejecuta transacciones.</li>
-        <li><strong>Datos de dispositivo:</strong> identificadores técnicos, sistema operativo, versión de la app, IP aproximada para seguridad y prevención de fraude.</li>
-        <li><strong>Cookies y tecnologías similares (en web):</strong> para analítica básica y mejorar la experiencia.</li>
-    </ul>
+    <div class="seccion">
+      <div class="seccion-head"><div class="seccion-num">2</div><div class="seccion-titulo">Datos que recopilamos</div></div>
+      <ul class="bullets">
+        <li><span><b>Datos de cuenta:</b> nombre, correo electrónico, país, moneda preferida e idioma seleccionados al registrarte.</span></li>
+        <li><span><b>Perfil financiero:</b> meta principal (ahorrar, controlar gastos, pagar deudas, invertir o estabilidad), frecuencia y monto promedio de ingresos.</span></li>
+        <li><span><b>Datos financieros que tú ingresas:</b> transacciones, categorías, metas de ahorro, aportes, inversiones y configuraciones. Dinovo no custodia tu dinero ni ejecuta transacciones reales.</span></li>
+        <li><span><b>Audio (registro por voz):</b> el reconocimiento de voz se procesa localmente en tu dispositivo mediante speech_to_text. El audio no se transmite ni se guarda en nuestros servidores.</span></li>
+        <li><span><b>Imágenes (escaneo OCR de facturas):</b> las imágenes se procesan localmente con Google ML Kit en tu dispositivo. No se suben a nuestros servidores ni se conservan tras el escaneo.</span></li>
+        <li><span><b>Conversaciones con el chatbot Dino:</b> son temporales. Se borran automáticamente cuando sales del chat y no se almacenan en tu historial.</span></li>
+        <li><span><b>Datos de dispositivo y uso:</b> sistema operativo, versión de la app, token de notificaciones push, rachas de uso y datos técnicos para seguridad y mejora del producto.</span></li>
+      </ul>
+    </div>
 
-    <h2>3. Finalidades del tratamiento</h2>
-    <ul>
-        <li><strong>Proveer el servicio:</strong> autenticación, configuración de cuenta y sincronización.</li>
-        <li><strong>Análisis y reportes:</strong> generar visualizaciones, métricas y resúmenes personalizados.</li>
-        <li><strong>Recomendaciones asistidas por IA:</strong> sugerencias de hábitos, alertas y proyecciones.</li>
-        <li><strong>Mejora del producto:</strong> depuración, analítica agregada, pruebas de nuevas funciones.</li>
-        <li><strong>Seguridad:</strong> detección de uso fraudulento o abusivo.</li>
-        <li><strong>Comunicaciones:</strong> avisos operativos, cambios en términos o políticas, mensajes relevantes para tu uso.</li>
-    </ul>
+    <div class="seccion">
+      <div class="seccion-head"><div class="seccion-num">3</div><div class="seccion-titulo">Almacenamiento local-first</div></div>
+      <p>Dinovo guarda tus datos primero localmente en tu dispositivo (en una base local con Hive) y los sincroniza con nuestros servidores cuando hay conexión. Esto significa que puedes usar la app sin internet y tus datos permanecen disponibles aunque pierdas señal.</p>
+    </div>
 
-    <h2>4. Base legal</h2>
-    <ul>
-        <li><strong>Ejecución de contrato:</strong> para operar la app y sus funciones principales.</li>
-        <li><strong>Interés legítimo:</strong> mejorar el servicio, seguridad y analítica agregada.</li>
-        <li><strong>Consentimiento:</strong> cuando la ley lo requiera (por ejemplo, notificaciones, ciertas analíticas o marketing).</li>
-        <li><strong>Cumplimiento legal:</strong> atender solicitudes válidas de autoridades.</li>
-    </ul>
+    <div class="seccion">
+      <div class="seccion-head"><div class="seccion-num">4</div><div class="seccion-titulo">Procesamiento por IA</div></div>
+      <p>Las funciones de IA Premium (chatbot Dino Premium) envían un resumen agregado de tus finanzas a Anthropic (proveedor del modelo Claude) para generar respuestas personalizadas. Anthropic procesa estos datos solo para responder y no los usa para entrenar sus modelos.</p>
+      <p>Las funciones de IA Básica (Dino Básico) funcionan 100% en tu dispositivo sin enviar nada externo. Hay un límite de 100 mensajes Premium por día para garantizar el servicio.</p>
+    </div>
 
-    <h2>5. Compartición de datos</h2>
-    <p>No vendemos tu información personal. Podemos compartirla con:</p>
-    <ul>
-        <li><strong>Proveedores:</strong> autenticación (por ejemplo, Google/Apple), analítica, almacenamiento, servicios de IA, siempre bajo obligaciones de confidencialidad.</li>
-        <li><strong>Autoridades:</strong> cuando sea requerido legalmente.</li>
-        <li><strong>Transferencias:</strong> en caso de fusiones/adquisiciones, bajo garantías adecuadas.</li>
-    </ul>
+    <div class="seccion">
+      <div class="seccion-head"><div class="seccion-num">5</div><div class="seccion-titulo">Finalidades del tratamiento</div></div>
+      <ul class="bullets">
+        <li><span><b>Proveer el servicio:</b> autenticación, sincronización y funciones core de la app.</span></li>
+        <li><span><b>Análisis personalizado:</b> generar resúmenes, gráficos, métricas e insights de tus finanzas.</span></li>
+        <li><span><b>Notificaciones push:</b> recordatorios diarios, alertas de gastos inusuales, rachas y resumen semanal. Puedes desactivarlas desde los ajustes del sistema.</span></li>
+        <li><span><b>Seguridad:</b> detección de uso fraudulento o abusivo.</span></li>
+        <li><span><b>Mejora del producto:</b> analítica agregada, depuración y pruebas de funciones.</span></li>
+      </ul>
+    </div>
 
-    <h2>6. Transferencias internacionales</h2>
-    <p>Si transferimos datos fuera de tu país, aplicaremos salvaguardas adecuadas (por ejemplo, cláusulas contractuales estándar).</p>
+    <div class="seccion">
+      <div class="seccion-head"><div class="seccion-num">6</div><div class="seccion-titulo">Compartición de datos</div></div>
+      <p>No vendemos tu información personal. Compartimos datos únicamente con los siguientes proveedores bajo obligaciones de confidencialidad:</p>
+      <ul class="bullets">
+        <li><span><b>Supabase:</b> infraestructura de base de datos y autenticación (hospedaje en AWS).</span></li>
+        <li><span><b>Anthropic:</b> procesamiento de IA para el chatbot Premium (envía resúmenes agregados sin identidad).</span></li>
+        <li><span><b>Google:</b> autenticación OAuth (opcional al iniciar sesión) y ML Kit para OCR local.</span></li>
+        <li><span><b>Apple App Store / Google Play:</b> procesamiento de pagos de suscripciones Premium. Dinovo no accede a información de pago.</span></li>
+        <li><span><b>Autoridades:</b> únicamente cuando sea legalmente requerido.</span></li>
+      </ul>
+    </div>
 
-    <h2>7. Retención</h2>
-    <p>Conservamos tus datos mientras tu cuenta esté activa y por el tiempo necesario para cumplir fines legítimos y obligaciones legales. Puedes solicitar la eliminación de tu cuenta y datos, salvo cuando la ley requiera conservarlos.</p>
+    <div class="seccion">
+      <div class="seccion-head"><div class="seccion-num">7</div><div class="seccion-titulo">Suscripciones y pagos</div></div>
+      <p>Dinovo ofrece planes Premium y Pro con suscripción mensual o anual. Los pagos se procesan a través de Apple App Store o Google Play. Dinovo no almacena ni accede a información de tarjetas de crédito ni métodos de pago.</p>
+    </div>
 
-    <h2>8. Seguridad</h2>
-    <p>Aplicamos medidas técnicas y organizativas razonables (cifrado en tránsito, controles de acceso, monitorización). Ningún sistema es 100% seguro, pero trabajamos para proteger tu información.</p>
+    <div class="seccion">
+      <div class="seccion-head"><div class="seccion-num">8</div><div class="seccion-titulo">Retención y eliminación</div></div>
+      <p>Conservamos tus datos mientras tu cuenta esté activa. Puedes solicitar la eliminación total de tu cuenta y datos escribiéndonos a dinovosoporte@gmail.com. Procesaremos la solicitud en un plazo razonable salvo cuando la ley requiera conservarlos.</p>
+    </div>
 
-    <h2>9. Tus derechos</h2>
-    <p>Dependiendo de tu jurisdicción, puedes tener derechos de acceso, rectificación, eliminación, portabilidad, oposición y limitación del tratamiento. Para ejercerlos, contáctanos en <a href="mailto:privacidad@dinovo.app">privacidad@dinovo.app</a>.</p>
+    <div class="seccion">
+      <div class="seccion-head"><div class="seccion-num">9</div><div class="seccion-titulo">Seguridad</div></div>
+      <p>Aplicamos cifrado en tránsito (HTTPS/TLS), autenticación segura via Supabase Auth, controles de acceso para el equipo y prácticas de desarrollo seguras. Ningún sistema es 100% seguro, pero seguimos las mejores prácticas de la industria.</p>
+    </div>
 
-    <h2>10. Menores</h2>
-    <p>Dinovo no está dirigida a menores de la edad legal aplicable. Si recibimos datos de menores sin autorización, los eliminaremos razonablemente pronto.</p>
+    <div class="seccion">
+      <div class="seccion-head"><div class="seccion-num">10</div><div class="seccion-titulo">Tus derechos</div></div>
+      <p>Tienes derecho a acceder, rectificar, eliminar, exportar y oponerte al tratamiento de tus datos. Para ejercerlos, contáctanos en dinovosoporte@gmail.com.</p>
+    </div>
 
-    <h2>11. Cookies</h2>
-    <p>En la web podemos usar cookies esenciales y de analítica básica. Puedes gestionar tus preferencias desde tu navegador. Si aplican cookies no esenciales, solicitaremos tu consentimiento cuando la ley lo exija.</p>
+    <div class="seccion">
+      <div class="seccion-head"><div class="seccion-num">11</div><div class="seccion-titulo">Menores</div></div>
+      <p>Dinovo no está dirigida a menores de 13 años. Si recibimos datos de menores sin autorización parental, los eliminaremos al detectarlos.</p>
+    </div>
 
-    <h2>12. Cambios a esta Política</h2>
-    <p>Podemos actualizar esta Política. Notificaremos cambios relevantes en la app o por medios razonables. La fecha de “Última actualización” indica su vigencia.</p>
+    <div class="seccion">
+      <div class="seccion-head"><div class="seccion-num">12</div><div class="seccion-titulo">Cambios a esta Política</div></div>
+      <p>Podemos actualizar esta Política. Notificaremos cambios relevantes dentro de la app. La fecha de "Última actualización" indica su vigencia.</p>
+    </div>
 
-    <h2>13. Contacto</h2>
-    <p>Para dudas sobre privacidad: <a href="mailto:dinovosoporte@gmail.com">dinovosoporte@gmail.com</a> — República Dominicana</p>
+    <div class="seccion">
+      <div class="seccion-head"><div class="seccion-num">13</div><div class="seccion-titulo">Contacto</div></div>
+      <p>Para dudas sobre privacidad escríbenos a dinovosoporte@gmail.com — República Dominicana.</p>
+    </div>
+  </div>
 
-    <div class="footer">© Dinovo. Todos los derechos reservados.</div>
-</div>
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-logo">Din<span>o</span>vo</div>
+    <div class="footer-text">Todos los derechos reservados</div>
+  </div>
+
 </body>
 </html>
